@@ -26,13 +26,14 @@ The goal is **not to build a full system**, but to:
 4. **Preserve old experiments** — all versions document the evolution of thought  
 5. **Use `docs/` for reflections and indexes**, not just technical documentation  
 
-## 📂 Project Structure
-LogicGarden/
-├── python/ # Python experiments
-├── javascript/ # JavaScript experiments
-├── web/ # HTML/CSS & small demos
-├── ideas/ # Notes and raw logic concepts
-└── docs/ # Reflections, workflow, and indexes
+| Direktori | Deskripsi |
+| :--- | :--- |
+| **LogicGarden/** | **Root Proyek** |
+| `python/` | Eksperimen dan skrip Python |
+| `javascript/` | Eksperimen dan fungsi JavaScript |
+| `web/` | Demo kecil, file HTML/CSS/Web |
+| `ideas/` | Konsep logika mentah dan catatan |
+| `docs/` | Refleksi proyek, indeks, dan dokumentasi alur kerja |
 
 ## 🔭 Long-Term Goals
 Logic Garden is designed to **grow indefinitely**, without a fixed endpoint. Potential directions include:  
