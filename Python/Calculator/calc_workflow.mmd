@@ -1,0 +1,57 @@
+%%{init: {'theme': 'base'}}%%
+graph TD
+    A[Start] --> B{Main Loop: Display Menu}
+
+    B --> C{User Choice 1-4 or 0}
+    
+    C -->|1| D1[Call calculate_expression]
+    C -->|2| D2[Call solve_linear]
+    C -->|3| D3[Call solve_system]
+    C -->|4| D4[Call calculate_power_root]
+    C -->|0| F[End Program]
+    C -->|Invalid| E[Print Invalid choice]
+
+    D1 --> Subgraph_Arithmetic
+    D2 --> B
+    D3 --> Subgraph_System
+    D4 --> B
+    E --> B
+
+    %% Subgraph for Arithmetic
+    subgraph Subgraph_Arithmetic [Function: _evaluate_expression_safely]
+        S1[Input Expression String] --> S2{AST Parsing Successful?}
+        S2 -->|Yes| S3{Security Check: Allowed Nodes?}
+        S2 -->|No| SE1[Error: Print Invalid Syntax]
+
+        S3 -->|Yes| S4{Evaluate Expression}
+        S3 -->|No| SE2[Error: Print Disallowed Operation]
+
+        S4 -->|Success| S5[Print Result]
+        S4 -->|Division by Zero| SE3[Error: Print Math Error]
+        S4 -->|Other Exception| SE4[Error: Print Evaluation Error]
+
+        S5 --> D1_END[Return to Main Loop]
+        SE1 --> D1_END
+        SE2 --> D1_END
+        SE3 --> D1_END
+        SE4 --> D1_END
+    end
+
+    %% Subgraph for System of Equations
+    subgraph Subgraph_System [Function: solve_system]
+        T1[Input Coefficients a1..c2] --> T2[Calculate Determinants D, Dx, Dy]
+        T2 --> T3{Is D close to Zero?}
+
+        T3 -->|No| T4[Calculate x = Dx/D, y = Dy/D]
+        T3 -->|Yes| T5{Are Dx and Dy close to Zero?}
+
+        T5 -->|Yes| T6[Print: Infinitely many solutions]
+        T5 -->|No| T7[Print: No unique solution]
+
+        T4 --> D3_END[Return to Main Loop]
+        T6 --> D3_END
+        T7 --> D3_END
+    end
+
+    Subgraph_Arithmetic --> B
+    Subgraph_System --> B
