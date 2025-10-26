@@ -51,8 +51,9 @@ It supports arithmetic evaluation, linear and system equation solving, as well a
 1.  **Clone this repository** (or your fork):
 
     ```bash
-    git clone [https://github.com/sphael/logic-garden.git](https://github.com/sphael/logic-garden.git)
+    git clone https://github.com/Sphael7/logic-garden.git
     cd logic-garden/calculator
+
     ```
 
 2.  **Run the program**:
