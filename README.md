@@ -42,6 +42,6 @@ Logic Garden is designed to **grow indefinitely**, without a fixed endpoint. Pot
 - Acting as an **archive of thought** on how logic can represent human reasoning  
 
 ## ✍️ Author
-**Creator:** [Your Name]  
+**Creator:** Christopher Alberto Hamonangan
 **Started:** 2025  
 **Mission:** *To understand the world through the smallest unit of logic.*
